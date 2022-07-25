@@ -1,6 +1,4 @@
-<h1>
-	<center>POO en JS</center>
-</h1>
+<center><h1>POO en JS</h1></center>
 
 La programación orientada a objetos es un paradigma de programación con la finalidad de resolver los problemas mediante objetos, esta tiene cuatro principios los cuales son:
 
