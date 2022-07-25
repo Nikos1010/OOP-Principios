@@ -179,7 +179,108 @@ En proceso...
 ---
 En proceso...
 ## Herencia
-En proceso...
+Para reutilizar codigo podemos utilizar la herencia y abstraer una clase padre o una superclase, la manera de utilizar la herencia en javascript es mediante la palabra clave `extends` y para llamar los datos que tenemos en el constructor de la clase padre, debemos utilizar la palabra clave `super`, un ejemplo seria el siguiente:
+
++ En una clase hay personas, pero se dividen entre estudiantes y profesores, en si lo unico que cambiaria serian algunos datos, vamos a hacer la abstracción de esto.
+	- La clase persona tiene estos datos:
+		- nombre.
+		- tipo de credencial.
+		- edad.
+		- materias
+		Metodos:
+		- Asistir a clase.
+		- Obtener informacion.
+	- La clase Estudiante tiene estos datos:
+		- nombre.
+		- tipo de credencial.
+		- edad.
+		- puesto en la clase.
+		- Materias que ve.
+		Metodos:
+		- Asisitir a clase.
+		- Poner atencion.
+		- Obtener información.
+	- La clase Profesos tiene estos datos:
+		- nombre.
+		- tipo de credencial.
+		- edad.
+		- cantidad de alumnos.
+		- Materia/s que dicta.
+		Metodos:
+		- Asisitir a clase.
+		- Dictar clase.
+		- Obtener información.
+
+Si notamos la abstracción podemos ver que la clase Persona puede ayudar a que utilicemos menos codigo en nuestra aplicación, vamos a mostrar ya este ejemplo en JavaScript:
+
+```javascript
+class Persona {
+    constructor({nombre, tipoCredencial = 'estudiante', edad, materias = []}) {
+        this._nombre = nombre;
+        this._tipoCredencial = tipoCredencial;
+        this.edad = edad;
+        this.materias = materias;
+    }
+
+    asistirAClase() {
+        console.log(this._nombre +' esta en la clase.');
+    }
+    
+    obtenerInfo() {
+        console.log(this._nombre + ' tiene una credencial de tipo: ' + this._tipoCredencial + '.');
+    }
+}
+
+class Estudiante extends Persona {  //Palabra clave extends
+    constructor({props, puestoClase}) {
+        super(props); //Palabra clave super
+        this.puestoClase = puestoClase;
+    }
+
+    ponerAtencion() {
+        console.log(this._nombre + ' esta poniendo atención.');
+    }
+}
+
+class Profesor extends Persona { //Palabra clave extends
+    constructor ({props, cantidadAlumnos}){
+        super(props);  //Palabra clave super
+        this.cantidadAlumnos = cantidadAlumnos;
+    }
+
+    dictarClase() {
+        console.log(this._nombre + ' esta dictando clase a ' + this.cantidadAlumnos + ' alumnos.');
+    }
+}
+
+const julian = new Estudiante({
+    props: {
+        nombre: 'Julian Comodoro',
+        edad: 15,
+        materias: ['Español', 'Ingles']
+    },
+    puestoClase: 5
+});
+
+const david = new Profesor({
+    props: {
+        nombre: 'David Gutierrez',
+        tipoCredencial: 'profesor',
+        edad: 45,
+        materias: ['Español']
+    },
+    cantidadAlumnos: 30
+});
+
+julian.asistirAClase(); //Julian Comodoro esta en la clase.
+julian.ponerAtencion(); //Julian Comodoro esta poniendo atención.
+julian.obtenerInfo(); //Julian Comodoro tiene una credencial de tipo: estudiante.
+
+david.asistirAClase(); //David Gutierrez esta en la clase.
+david.dictarClase(); //David Gutierrez esta dictando clase a 30 alumnos.
+david.obtenerInfo(); //David Gutierrez tiene una credencial de tipo: profesor.
+```
+> Notamos como se puede reutilizar codigo para que no escribamos las mismas lineas una y otra vez.
 
 ## Polimorfismo
 En proceso...
