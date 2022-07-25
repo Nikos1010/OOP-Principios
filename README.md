@@ -1,9 +1,3 @@
-**Tabla de Contenido**
-
-[TOCM]
-
-[TOC]
-
 <h1>
 	<center>POO en JS</center>
 </h1>
@@ -35,7 +29,7 @@ Ejemplo:
 Esa seria la abstracción de un objeto, y asi se veria en Javascript esta abstracción con `prototype`:
 
 ```javascript
-	function Silla({
+function Silla({
     numeroPatas,
     tipoEspaldar,
     tieneRuedas,
@@ -145,8 +139,49 @@ Podemos tener varios tipos de encapsulamiento el getter y setter, los namescapes
 Con los getter podemos obtener este valor oculto, para mostrarlo de forma externa, por el contrario con el setter lo utilizamos para modificar este valor del dato de la clase, aca observaremos un ejemplo:
 
 ```javascript
+class Persona {
+    constructor({ nombre, apellido, edad }) {
+        this._nombre = nombre;
+        this._apellido = apellido;
+        this.edad = edad;
+    }
 
+    get nombre() {
+        console.log("Hola " + this._nombre);
+    }
+
+    set nombre(nuevoNombre) {
+        this._nombre = nuevoNombre;
+    }
+
+    get apellido() {
+        console.log("Señor/a " + this._apellido);
+    }
+
+    set apellido(nuevoApellido) {
+        this._apellido = nuevoApellido;
+    }
+}
+
+const julio = new Persona({nombre: 'Julio', apellido: 'Ramirez', edad: 25});
+
+console.log(julio.nombre); //Julio
+julio.nombre = 'Andres';
+console.log(julio.nombre); //Andres
+
+console.log(julio.apellido); //Ramirez
+julio.apellido = 'Caro';
+console.log(julio.apellido); //Caro
 ```
+
+### Namescapes
+---
+En proceso...
+### Object.defineproperties
+---
+En proceso...
 ##Herencia
+En proceso...
 
 ##Polimorfismo
+En proceso...
