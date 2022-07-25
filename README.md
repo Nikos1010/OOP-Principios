@@ -11,7 +11,7 @@ La programación orientada a objetos es un paradigma de programación con la fin
 
 Estos principios son los que nos ayudaran a reutilizar el codigo, para no repetirlo, tambien nos permitira tener el codigo de nuestras aplicaciones de una manera ordenada y permitir que estas crezcan. Pero en Javascript esto no se maneja con clases, si no que se maneja por prototipos, mas esto no significa que no podemos utilizar la palabra reservada `class` en javascript, la podemos utilizar, pero esto es una forma en la cual podemos visualizar mejor lo que creamos, pero siguen siendo prototipos por detras de esta palabra.
 
-##Abstracción
+## Abstracción
 Cuando hablamos de abstracción podemos entenderlo como los moldes que haremos de los objetos que encontremos en nuestra aplicación. La abstracción es la obtención de los atributos y elementos de un objeto (puede ser fisico o intangible) para luego hacer un analisis y diferenciar cuales objetos seran los padres y cuales seran los hijos.
 
 Ejemplo:
@@ -129,12 +129,12 @@ gamer.obtenerInfo(); //La Silla es de tipo: gamer,
 
 > Utilizar `class` es mucho mejor, ya que es mas entendible y ordenado.
 
-##Encapsulamiento
+## Encapsulamiento
 Esconder los datos de un objeto, para que solo se puedan manipular por los objetos definidos en la clase, el objetivo de esto, es que el objeto no pueda manipular estos datos de una manera tan simple, si no por el contrario, protegerlos, esconderlos o hacerlos invisibles ante estos.
 
 Podemos tener varios tipos de encapsulamiento el getter y setter, los namescapes y los `Object.defineproperties`. Para decir que un dato es privado en JS, ya que esto no existe, se utiliza el _ antes del nombre del dato, ejemplo: `this._name = 'Nikos'`
 
-###Getter y Setter
+### Getter y Setter
 ---
 Con los getter podemos obtener este valor oculto, para mostrarlo de forma externa, por el contrario con el setter lo utilizamos para modificar este valor del dato de la clase, aca observaremos un ejemplo:
 
@@ -180,8 +180,8 @@ En proceso...
 ### Object.defineproperties
 ---
 En proceso...
-##Herencia
+## Herencia
 En proceso...
 
-##Polimorfismo
+## Polimorfismo
 En proceso...
