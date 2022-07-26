@@ -270,3 +270,12 @@ const freddy = new TeacherStudent({
     instagram: "Freddiervega",
 });
 
+const arreglo = [
+    "string",
+    25,
+    true,
+    undefined,
+    null,
+    BigInt(Number.MAX_SAFE_INTEGER),
+];
+console.log(arreglo)

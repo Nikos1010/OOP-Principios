@@ -335,7 +335,28 @@ if(num) { //true
 
 ### Polimorfismo Paramétrico
 ---
-En proceso...
+Este se divide en dos partes:
+1. Datos que pueden contener muchos tipos de datos.
+2. Funciones que pueden trabajar con muchos tipos de datos.
+
+#### Datos que pueden contener muchos tipos de datos
+En Javascript todo son Objetos. Por lo tanto, los objetos son paramétricos, se pueden convertir en otros tipos de datos.
+Los objetos también pueden guardar varios tipos, no importa que valores se almacenen.
+```javascript
+const object = {
+  string: 'hello',
+  number: 123,
+  boolean: true,
+  symbol: Symbol(),
+  und: undefined,
+  nul: null,
+  bigint: BigInt(Number.MAX_SAFE_INTEGER)
+}
+```
+Esto tambien aplica con las arreglos, son paramétrcos, estos aceptan cualquier tipo de datos.
+```javascript
+const arreglo = ['string', 25, true, undefined, null, BigInt(Number.MAX_SAFE_INTEGER)]
+```
 ### Polimorfismo subtipo o inclusión
 ---
 En proceso...
