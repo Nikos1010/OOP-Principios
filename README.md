@@ -283,4 +283,59 @@ david.obtenerInfo(); //David Gutierrez tiene una credencial de tipo: profesor.
 > Notamos como se puede reutilizar codigo para que no escribamos las mismas lineas una y otra vez.
 
 ## Polimorfismo
+Si tenemos en una clase padre metodos generales que utilizaran las distintas clases, pero una o varias clases hijas esa misma accion la hacen de manera distinta a la padre, entonces es donde encontramos el polimorfismo, el cual tiene varios tipos:
+
+- adhoc.
+- Paramétrico.
+- Inclusión.
+
+>Esto lo lei de este [artículo](https://www.instintoprogramador.com.mx/2020/11/polimorfismo-en-javascript.html) sobre polimorfismo.
+
+### Polimorfismo adhoc
+---
+Cambiar algo de una forma a otra en el acto, para este encontramos los siguientes tres tipos:
+
+- Sobrecarga del operador.
+- Sobrecarga de funciones.
+- Polimorfismo de coerción.
+
+#### Sobrecarga del Operador
+Es cuando podemos hacer mas de una cosa, podemos observar el operador `+` que hace muchas cosas, como puede ser sumar numeros, como tambien concatenar cadenas, un ejemplo seria:
+
+
+```javascript
+console.log( 4 + 2 ); //6
+console.log("El resultado de " + 10 +" + " + 6 + " es: " + 10 + 6 ); //El resultado de 10 + 6 es: 106
+console.log("El resultado de " + 10 + " + " + 6 + " es: " + (10 + 6)); //El resultado de 10 + 6 es: 16
+```
+> Si nota la linea de codigo 2, vera que no se suma solo con el `+`, eso se debe a que javascript piensa que solo se estan haciendo concatenaciones, para lograr que se sume hay que colocarlo entre parentesis.
+Esto se debe a que JS utiliza el `type` entonces si se utiliza:
+`Number` + `Number`, sera `Number`.
+`Number` + `String`, sera `String`.
+
+#### Sobrecarga de Funciones
+En distintos lenguajes la sobrecarga de funciones, es crear dos o mas funciones con el mismo nombre, pero con diferentes argumentos, en Javascript no se puede hacer esto, entonces es un poco diferente, usamos una funcion, pero cambiamos los resultados de acuerdo a los argumentos que recibimos, un ejemplo sería:
+```javascript
+function createShape(size, shape) {
+    if (shape === "triangle") console.log('Este es un triangulo');
+    if (shape === "rectangle") console.log("Este es un rectangulo");
+    if (shape === "square") console.log("Este es un cuadrado");
+}
+```
+Entendiendo esto, podemos ver el `if` y el  `switch` hacen sobrecarga de funciones, ya que estos dependiendo de los argumentos dan ciertos resultados.
+
+#### Polimorfismo de Coerción
+Javascript tiene una coerción de tipo. Convierte valor de un tipo a otro mientras los evalúa. Por ejemplo, cualquier expresión dentro de una declaración `if`, JavaScript la convierte en `true` o `false`:
+```javascript
+const num = 3;
+if(num) { //true
+    console.log(num) //3
+}
+```
+
+### Polimorfismo Paramétrico
+---
+En proceso...
+### Polimorfismo subtipo o inclusión
+---
 En proceso...

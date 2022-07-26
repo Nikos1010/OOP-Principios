@@ -269,3 +269,4 @@ const freddy = new TeacherStudent({
     email: "f@dep.com",
     instagram: "Freddiervega",
 });
+
