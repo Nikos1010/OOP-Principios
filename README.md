@@ -225,7 +225,7 @@ class Persona {
     asistirAClase() {
         console.log(this._nombre +' esta en la clase.');
     }
-    
+
     obtenerInfo() {
         console.log(this._nombre + ' tiene una credencial de tipo: ' + this._tipoCredencial + '.');
     }
@@ -357,6 +357,44 @@ Esto tambien aplica con las arreglos, son paramétrcos, estos aceptan cualquier 
 ```javascript
 const arreglo = ['string', 25, true, undefined, null, BigInt(Number.MAX_SAFE_INTEGER)]
 ```
+#### Funciones que pueden trabajar con muchos tipos de datos
+Estas se denominan como funciones polimórficas, no les interesa que tipos de datos se pasen. Aplicarán la transformación que se le dice y dan un resultado.
+```javascript
+const doubled = [1, 2, 3].map(num => num * 2); // [ 2, 4, 6 ]
+```
 ### Polimorfismo subtipo o inclusión
 ---
-En proceso...
+Crear objetos derivados a partir de un objeto principal. Los metodos derivados pueden anular el metodo del padre y seguira funcionando.
+Un ejemplo en Javascript seria este:
+
+```javascript
+class Person {
+    constructor(name) {
+        this._name = name;
+    }
+
+    saludar() {
+        console.log(`Hola! mi nombre es ${this._name}`);
+    }
+}
+
+class Desarrollador extends Person {
+    saludar() {
+        console.log(`Hola! mi nombre es ${this._name}. Yo soy un desarrollador.`);
+    }
+}
+
+class Designer extends Person {
+    saludar() {
+        console.log(`Hola! mi nombre es ${this._name}. Yo soy un diseñador.`);
+    }
+}
+
+const zell = new Person('Zell')
+const vincy = new Desarrollador("Vincy");
+const tim = new Designer('Tim')
+
+zell.saludar() // Hola! mi nombre es Zell.
+vincy.saludar() // Hola! mi nombre es Vincy. Yo soy un desarrollador.
+tim.saludar() // Hola! mi nombre es Tim. Yo soy un diseñador.
+```

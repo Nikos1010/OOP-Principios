@@ -269,13 +269,3 @@ const freddy = new TeacherStudent({
     email: "f@dep.com",
     instagram: "Freddiervega",
 });
-
-const arreglo = [
-    "string",
-    25,
-    true,
-    undefined,
-    null,
-    BigInt(Number.MAX_SAFE_INTEGER),
-];
-console.log(arreglo)
